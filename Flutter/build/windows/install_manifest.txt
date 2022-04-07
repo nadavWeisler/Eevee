@@ -1,0 +1,10 @@
+C:/Repos/Study/Eevee/build/windows/runner/Debug/data/icudtl.dat
+C:/Repos/Study/Eevee/build/windows/runner/Debug/flutter_windows.dll
+C:/Repos/Study/Eevee/build/windows/runner/Debug/data/flutter_assets/AssetManifest.json
+C:/Repos/Study/Eevee/build/windows/runner/Debug/data/flutter_assets/assets/images/eevee_logo.jpg
+C:/Repos/Study/Eevee/build/windows/runner/Debug/data/flutter_assets/assets/images/eevee_logo.svg
+C:/Repos/Study/Eevee/build/windows/runner/Debug/data/flutter_assets/FontManifest.json
+C:/Repos/Study/Eevee/build/windows/runner/Debug/data/flutter_assets/fonts/MaterialIcons-Regular.otf
+C:/Repos/Study/Eevee/build/windows/runner/Debug/data/flutter_assets/kernel_blob.bin
+C:/Repos/Study/Eevee/build/windows/runner/Debug/data/flutter_assets/NOTICES.Z
+C:/Repos/Study/Eevee/build/windows/runner/Debug/data/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf

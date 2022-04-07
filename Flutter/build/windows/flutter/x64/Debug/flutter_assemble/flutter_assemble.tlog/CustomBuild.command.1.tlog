@@ -1,0 +1,28 @@
+^C:\REPOS\STUDY\EEVEE\BUILD\WINDOWS\CMAKEFILES\C6468226D0C53B5C23E8C515A1DFA31A\FLUTTER_WINDOWS.DLL.RULE
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E env "FLUTTER_ROOT=C:\Users\t-nweisler\OneDrive - Microsoft\Documents\flutter" PROJECT_DIR=C:\Repos\Study\Eevee "FLUTTER_ROOT=C:\Users\t-nweisler\OneDrive - Microsoft\Documents\flutter" FLUTTER_EPHEMERAL_DIR=C:\Repos\Study\Eevee\windows\flutter\ephemeral PROJECT_DIR=C:\Repos\Study\Eevee FLUTTER_TARGET=C:\Repos\Study\Eevee\lib\main.dart DART_DEFINES=RkxVVFRFUl9XRUJfQVVUT19ERVRFQ1Q9dHJ1ZQ== DART_OBFUSCATION=false TRACK_WIDGET_CREATION=true TREE_SHAKE_ICONS=false PACKAGE_CONFIG=C:\Repos\Study\Eevee\.dart_tool\package_config.json "C:/Users/t-nweisler/OneDrive - Microsoft/Documents/flutter/packages/flutter_tools/bin/tool_backend.bat" windows-x64 Debug
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\REPOS\STUDY\EEVEE\BUILD\WINDOWS\CMAKEFILES\83CDD672E17612DE2E5EC8624190BF6A\FLUTTER_ASSEMBLE.RULE
+setlocal
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\REPOS\STUDY\EEVEE\WINDOWS\FLUTTER\CMAKELISTS.TXT
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Repos/Study/Eevee/windows -BC:/Repos/Study/Eevee/build/windows --check-stamp-file C:/Repos/Study/Eevee/build/windows/flutter/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
