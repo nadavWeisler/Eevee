@@ -11,16 +11,22 @@ class MoodleConnector:
         moodle_api.KEY = token
         return moodle_api.call('core_course_get_contents', courseid=courseid)
 
+    def get_all_courses(self):
+        token = KeyGenerator.get_token_from_credentials(username=self._username, password=self._pass)
+        moodle_api.KEY = token
+        return moodle_api.call('core_course_get_recent_courses')
 
 if __name__ == '__main__':
     moodleConnector = MoodleConnector()
-    course1 = moodleConnector.get_course_contents_wrapper(52307)
-    course2 = moodleConnector.get_course_contents_wrapper(52311)
-    course3 = moodleConnector.get_course_contents_wrapper(67506)
-    course1 = moodleConnector.get_course_contents_wrapper(52307)
-    course1 = moodleConnector.get_course_contents_wrapper(52307)
-    course1 = moodleConnector.get_course_contents_wrapper(52307)
-    course1 = moodleConnector.get_course_contents_wrapper(52307)
+    courses_list = moodleConnector.get_all_courses()
+    print("f")
+    # course1 = moodleConnector.get_course_contents_wrapper(52307)
+    # course2 = moodleConnector.get_course_contents_wrapper(52311)
+    # course3 = moodleConnector.get_course_contents_wrapper(67506)
+    # course1 = moodleConnector.get_course_contents_wrapper(52307)
+    # course1 = moodleConnector.get_course_contents_wrapper(52307)
+    # course1 = moodleConnector.get_course_contents_wrapper(52307)
+    # course1 = moodleConnector.get_course_contents_wrapper(52307)
 
 
 
