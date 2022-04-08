@@ -1,7 +1,7 @@
 from requests import get, post
 
 # Module variables to connect to moodle api
-KEY = "173df58792956f12ece8f1290caa529f"
+KEY = "dd3111e77e451df8938e73b7b4e83cd7"
 URL = "https://moodle2.cs.huji.ac.il/nu21"
 ENDPOINT = "/webservice/rest/server.php"
 
@@ -93,7 +93,7 @@ class Course():
     """Class for a single course.
 
     Example:
-    >>> Course(name="Example course", shortname="example", categoryid=1, idnumber=123)
+    >>#> Course(name="Example course", shortname="example", categoryid=1, idnumber=123)
     """
 
     def __init__(self, **data):
@@ -114,7 +114,7 @@ class User():
     """Class for a single user.
 
     Example:
-    >>> User(name="Janez", surname="Novak", email="janez.novak@student.si", username="jnovak", password="sila varno geslo")"""
+    #>>> User(name="Janez", surname="Novak", email="janez.novak@student.si", username="jnovak", password="sila varno geslo")"""
 
     def __init__(self, **data):
         self.__dict__.update(data)
