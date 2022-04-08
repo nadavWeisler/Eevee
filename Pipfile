@@ -8,8 +8,7 @@ name = "pypi"
 
 flask = "*"
 gunicorn = "*"
-psycopg2 = "*"
-Flask-SQLAlchemy = "*"
+requests = "*"
 
 [requires]
 
