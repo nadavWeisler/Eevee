@@ -24,8 +24,8 @@ def index():
         r = requests.post(os.environ.get("SIGNUP_HOST")+"?name=" + name + '&email=' + email + '&trello_api_key=' +
                           trello1 + '&trello_api_secret=' + trello2 + '&trello_token=' + trello3 + '&moodle_username=' + moodleUserName + '&moodle_password=' + moodlePassword)
 
-        result = r.text.find('"rt": "1"') != -1
-        if result:
+        result = r.text.find('"status_code": "200"') != -1
+        if r.status_code == 200 or result:
             return send_from_directory('templates', 'thankYou.html')
         else:
             return send_from_directory('templates', 'error.html')
