@@ -1,5 +1,6 @@
 from Tasks import Task
 import re
+import time
 
 TASK = 'assign|quiz'
 DUE_DATE = 'Due|Closed'
@@ -10,11 +11,13 @@ class Parser:
     @staticmethod
     def parse_tasks(course_data, cid):
         tasks = []
+        current_time = time.time()
         for data_dict in course_data:
             for module in data_dict['modules']:
                 if re.match(TASK, module['modname']):
                     task = Parser.extract_task(cid, module, module['modname'])
-                    tasks.append(task)
+                    if task.due_date > current_time:
+                        tasks.append(task)
         return tasks
 
     @staticmethod
