@@ -36,4 +36,4 @@ def icon():
     return send_from_directory(app.static_folder, 'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 
-app.run(port=4500)
+app.run(port=5000)
