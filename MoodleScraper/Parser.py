@@ -1,28 +1,32 @@
-from Tasks import Assignment
+from Tasks import Task
+import re
 
-ASSIGNMENT = 'assign'
+TASK = 'assign|quiz'
+DUE_DATE = 'Due|Closed'
+
 
 class Parser:
 
     @staticmethod
-    def parse_assignments(course_data, cid):
-        assignments = {}
+    def parse_tasks(course_data, cid):
+        tasks = []
         for data_dict in course_data:
             for module in data_dict['modules']:
-                if module['modname'] == ASSIGNMENT:
-                    assignment = Parser.extract_assignment(cid, module)
-                    assignments[assignment.url] = assignment
-        return assignments
+                if re.match(TASK, module['modname']):
+                    task = Parser.extract_task(cid, module, module['modname'])
+                    tasks.append(task)
+        return tasks
 
     @staticmethod
-    def extract_assignment(cid, module):
+    def extract_task(cid, module, task_type):
         due_date = None
-        name, url = module['name'], module['url']
+        name = "{0}_{1}".format(cid, module['name'])
+        url = module['url']
         for date in module['dates']:
-            if 'Due' in date['label'] :
+            if re.match(DUE_DATE, date['label']):
                 due_date = date['timestamp']
                 break
-        return Assignment(name, due_date, url, cid)
+        return Task(name, due_date, url, cid, task_type)
 
 
 
