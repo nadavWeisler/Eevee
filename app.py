@@ -25,6 +25,7 @@ def index():
                           trello1 + '&trello_api_secret=' + trello2 + '&trello_token=' + trello3 + '&moodle_username=' + moodleUserName + '&moodle_password=' + moodlePassword)
 
         result = r.text.find('"status_code": "200"') != -1
+        print(r.status_code)
         if r.status_code == 200 or result:
             return send_from_directory('templates', 'thankYou.html')
         else:
