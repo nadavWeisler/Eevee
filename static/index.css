@@ -9,6 +9,39 @@ html {
     text-align: center;
 }
 
+#text_dialog {
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    border-radius: 0;
+    line-height: 18px;
+    padding: 13px 13px 13px 54px;
+    margin-bottom: 10px;
+    width: 100%;
+    border: 3px solid rgba(0, 0, 0, 0);
+}
+
+.trello_docs_dialog {
+    background-color: #008CBA;
+    color: black;
+    border: 2px solid white;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.trello_docs_dialog:hover {
+    background-color: white;
+    color: #008CBA;
+}
+
 #form-main {
     width: 100%;
     float: left;
@@ -37,7 +70,7 @@ html {
     font-weight: 500;
     font-size: 18px;
     border-radius: 0;
-    line-height: 22px;
+    line-height: 18px;
     background-color: #fbfbfb;
     padding: 13px 13px 13px 54px;
     margin-bottom: 10px;

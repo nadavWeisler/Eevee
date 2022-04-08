@@ -16,13 +16,13 @@ def index():
     else:
         name = request.form.get("name")
         email = request.values.get("email")
-        trello1 = request.values.get("trello1")
-        trello2 = request.values.get("trello2")
+        trello_api_secret = request.values.get("trello_api_secret")
+        trello_token = request.values.get("trello_token")
         trello3 = request.values.get("trello3")
         moodleUserName = request.values.get("moodleUserName")
         moodlePassword = request.values.get("moodlePassword")
         r = requests.post(os.environ.get("SIGNUP_HOST")+"?name=" + name + '&email=' + email + '&trello_api_key=' +
-                          trello1 + '&trello_api_secret=' + trello2 + '&trello_token=' + trello3 + '&moodle_username=' + moodleUserName + '&moodle_password=' + moodlePassword)
+                          trello_api_secret + '&trello_api_secret=' + trello_token + '&trello_token=' + trello3 + '&moodle_username=' + moodleUserName + '&moodle_password=' + moodlePassword)
 
         result = r.text.find('"status_code": "200"') != -1
         print(r.status_code)
