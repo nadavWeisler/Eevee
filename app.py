@@ -19,10 +19,11 @@ def index():
         trello_api_secret = request.values.get("trello_api_secret")
         trello_token = request.values.get("trello_token")
         trello3 = request.values.get("trello3")
-        moodleUserName = request.values.get("moodleUserName")
-        moodlePassword = request.values.get("moodlePassword")
+        moodle_username = request.values.get("moodle_username")
+        moodle_password = request.values.get("moodle_password")
         r = requests.post(os.environ.get("SIGNUP_HOST")+"?name=" + name + '&email=' + email + '&trello_api_key=' +
-                          trello_api_secret + '&trello_api_secret=' + trello_token + '&trello_token=' + trello3 + '&moodle_username=' + moodleUserName + '&moodle_password=' + moodlePassword)
+                          trello_api_secret + '&trello_api_secret=' + trello_token + '&trello_token=' + trello3 +
+                          '&moodle_username=' + moodle_username + '&moodle_password=' + moodle_password)
 
         result = r.text.find('"status_code": "200"') != -1
         print(r.status_code)
