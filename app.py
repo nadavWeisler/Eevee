@@ -21,7 +21,7 @@ def index():
         trello_api_key = request.values.get("trello_api_key")
         moodle_username = request.values.get("moodle_username")
         moodle_password = request.values.get("moodle_password")
-        r = requests.post(os.environ.get("SIGNUP_HOST")+"?name=" + name + '&email=' + email + '&trello_api_key=' +
+        r = requests.post(os.environ.get("SIGNUP_HOST") + "?name=" + name + '&email=' + email + '&trello_api_key=' +
                           trello_api_key + '&trello_api_secret=' + trello_api_secret + '&trello_token=' + trello_token +
                           '&moodle_username=' + moodle_username + '&moodle_password=' + moodle_password)
 
