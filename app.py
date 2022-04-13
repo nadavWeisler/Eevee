@@ -1,5 +1,5 @@
 import os
-
+from db.emailsender import sendMail
 from flask import Flask, request, send_from_directory
 import requests
 import os
@@ -28,6 +28,17 @@ def index():
         result = r.text.find('"status_code": "200"') != -1
         print(r.status_code)
         if r.status_code == 200 or result:
+            message = f"""
+            Hi there, {name}!
+            I am Eevee, your personal productivity assistant.
+            I am glad to see you have registered for my Moodle to Trello service.
+            
+            In the next few moments, the tasks from your Moodle will be synced to your Trello board.
+            I hope that will help you get more done in the upcoming semester.
+            
+            Good Luck :)
+            """
+            sendMail(name, email, message)
             return send_from_directory('templates', 'thankYou.html')
         else:
             return send_from_directory('templates', 'error.html')

@@ -23,12 +23,6 @@ class Messages():
     UserAddedSuccessfully = "User added successfully"
     LoginSucceeded = "Login Succeeded!"
 
-
-class DBTables():
-    Users = "Users"
-    Internships = "Internships"
-
-
 class ResponseStatus():
     Success = 200
     UserCreated = 201
