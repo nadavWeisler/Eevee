@@ -2,118 +2,128 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <title>Eevee</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Bootstrap core CSS -->
+</head>
 
-    <head rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <link rel="stylesheet" href="../static/index.css" />
+<body class="bg-light">
+    <div class="container">
+        <div class="py-5 text-center">
+            <img class="d-block mx-auto mb-4" src="https://cdn-icons-png.flaticon.com/512/949/949666.png" alt="" width="72" height="72">
+            <h2>Welcome to Eevee</h2>
+            <p class="lead">EEVEE text</p>
+        </div>
+        <div id="form-main">
+            <div id="form-div">
+                <div id="form1" method="post" enctype=multipart/form-data>
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp" placeholder="Enter Email">
+                    </div>
+                    <div class="form-group">
+                        <input required type="text" class="form-control" placeholder="Enter Trello Api Key" id="trello_api_key" />
+                    </div>
 
-        <script>
-            function openDialog() {
-                var trelloDialog = document.getElementById('trelloDialog');
-                trelloDialog.open = true;
-            }
+                    <div class="form-group">
+                        <input required type="text" class="form-control" placeholder="Enter Trello Api Secret" id="trello_api_secret" />
+                    </div>
 
-            function closeDialog() {
-                var trelloDialog = document.getElementById('trelloDialog');
-                trelloDialog.open = false;
-            }
-        </script>
-    </head>
+                    <div class="form-group">
+                        <input required type="text" class="form-control" placeholder="Enter Trello Token" id="trello_token" />
+                    </div>
+                    <div class="form-group">
+                        <input required name="moodle_username" type="text" class="form-control" placeholder="Moodle User Name" id="moodle_username" />
+                    </div>
+                    <div class="form-group">
+                        <input required name="moodle_password" type="password" class="form-control" placeholder="Moodle Password" id="moodle_password" />
+                    </div>
 
-    <html>
-    <div id="form-main">
-        <div id="form-div">
-            <form id="form1" method="post" enctype=multipart/form-data>
-                <p class="name">
-                    <input title="This is the text of the tooltip" required name="name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Name" id="name" />
-                </p>
+                    <button type="submit" class="btn btn-primary">
+                        Submit
+                    </button>
 
-                <p class="email">
-                    <input name="email" type="text" required class="validate[required,custom[email]] feedback-input" id="email" placeholder="Email" />
-                </p>
-                <button class="trello_docs_dialog" type="button" onclick="openDialog()">How to setup trello?</button>
-                <p class="text">
-                    <input required name="trello_api_key" type="text" class="validate[required,length[0,100]] feedback-input" placeholder="Trello Api Secret" id="trello_api_key" />
-                </p>
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#trelloDialog">
+                        Trello Tutorial
+                    </button>
+                    </form>
+                </div>
+            </div>
+        </div>
 
-                <p class="text">
-                    <input required name="trello_api_secret" type="text" class="validate[required,length[0,100]] feedback-input" placeholder="Trello Api Secret" id="trello_api_secret" />
-                </p>
-
-                <p class="text">
-                    <input required name="trello_token" type="text" class="validate[required,length[0,100]] feedback-input" placeholder="Trello Token" id="trello_token" />
-                </p>
-
-                <p class="text">
-                    <input required name="moodle_username" type="text" class="validate[required,length[0,100]] feedback-input" placeholder="Moodle User Name" id="moodle_username" />
-                </p>
-
-                <p class="text">
-                    <input required name="moodle_password" type="text" class="validate[required,length[0,100]] feedback-input" placeholder="Moodle Password" id="moodle_password" />
-                </p>
-
-                <p class="submit">
-                    <input type="submit" value="SEND" id="button-blue" />
-                    <div class="ease"></div>
-                </p>
-            </form>
+        <div class="modal fade" id="trelloDialog" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Trello Tutorial</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            1. Sign up to the service via <a href="https://trello.com/"> https://trello.com </a> and follow the steps to create a workspace
+                        </div>
+                        <hr>
+                        <div>
+                            2. Go to <a href="https://trello.com/app-key"> https://trello.com/app-key </a> and accept Trello Developer Terms:
+                        </div>
+                        <img src="../static/assets/developer_api_keys.png" width=400px alt="developer api keys">
+                        </img>
+                        <hr>
+                        <div>
+                            <p>
+                                3. Click 'Show API Key'. You will now be able see the api_key:
+                            </p>
+                            <img src="../static/assets/developer_api_keys_2.png" width=400px alt="developer api keys 2">
+                            </img>
+                        </div>
+                        <hr>
+                        <div>
+                            <p>
+                                4. Scroll down the page and save the API-secret:
+                            </p>
+                            <img src="../static/assets/oauth.png" width=400px alt="oauth">
+                            </img>
+                        </div>
+                        <hr>
+                        <div>
+                            <p>
+                                5. Generate a Token:
+                            </p>
+                            <img src="../static/assets/token.PNG" width=400px alt="Generate token">
+                            </img>
+                        </div>
+                        <hr>
+                        <div>
+                            <p>
+                                6. Allow access to your workspace:
+                            </p>
+                            <img src="../static/assets/workspace.png" width=400px alt="oauth">
+                            </img>
+                        </div>
+                        <hr>
+                        <div>
+                            <p>
+                                7. This will transfer you to the Trello Token:
+                            </p>
+                            <img src="../static/assets/trello_token.PNG" width=400px alt="trello token">
+                            </img>
+                        </div>
+                        <hr>
+                        <div>
+                            <p>
+                                8. Register to Eevee Using the 3 keys: API-key, API-secret, Trello Token
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <dialog id="trelloDialog" style="width:40%;">
-        <div>
-            <button class="trello_docs_dialog" onclick="closeDialog()">Close</button>
-            <p class="text_dialog feedback-input">
-                1. Sign up to the service via <a href="https://trello.com/"> https://trello.com </a> and follow the steps to create a workspace
-            </p>
+</body>
 
-            <p class="text_dialog">
-                <div class="text_dialog feedback-input">
-                    2. Go to <a href="https://trello.com/app-key"> https://trello.com/app-key </a> and accept Trello Developer Terms:
-                </div>
-                <img src="../static/assets/developer_api_keys.png" alt="developer api keys" style='width:300px align="center"'>
-            </p>
-
-            <p class="text_dialog">
-                <div class="feedback-input">
-                    3. Click 'Show API Key'. You will now be able see the api_key:
-                </div>
-                <img src="../static/assets/developer_api_keys_2.png" alt="developer api keys 2" style="width:300px">
-            </p>
-
-            <p class="text_dialog">
-                <div>
-                    4. Scroll down the page and save the API-secret:
-                </div>
-                <img src="../static/assets/oauth.png" alt="oauth" style="width:300px">
-            </p>
-
-            <p class="text">
-                <div class="feedback-input">
-                    5. Generate a Token:
-                </div>
-                <img src="../static/assets/token.PNG" alt="Generate token" style="width:300px">
-            </p>
-
-            <p class="text_dialog">
-                <div class="feedback-input">
-                    6. Allow access to your workspace:
-                </div>
-                <img src="../static/assets/workspace.png" alt="oauth" style="width:300px">
-            </p>
-
-
-
-            <p class="text_dialog">
-                <div class="feedback-input">
-                    7. This will transfer you to the Trello Token:
-                </div>
-                <img src="../static/assets/trello_token.PNG" alt="trello token" width="300px">
-            </p>
-
-            <p class="text_dialog feedback-input">
-                8. Register to Eevee Using the 3 keys: API-key, API-secret, Trello Token
-            </p>
-        </div>
-    </dialog>
-    </body>
+</html>
